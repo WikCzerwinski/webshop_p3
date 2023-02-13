@@ -1,0 +1,102 @@
+body{
+    background-color:#D6CEBA;
+    margin:0;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+   
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    margin-bottom:5%;
+  }
+  
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;;
+}
+
+.logincontainer{
+    align-items:center;
+}
+.loginbox{
+    width:50%;
+    align-self: center;
+    margin:auto;
+   
+    border-radius: 15px;
+   
+    
+}
+
+.logintext{
+    text-align:center;  
+    font-size: 70px;
+  
+}
+
+.loginbutton{
+    border: 2px solid white;
+    border-radius: 10px;
+    width:10%;
+    font-size: 20px;
+    text-align: center;
+    padding:10px;
+    justify-content: center;
+    margin:auto;
+    margin-left:25%;
+    margin-bottom: 5%;
+  
+}
+.login {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid white;
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color:white;
+    
+
+}
+
+form{
+    text-align: center;
+   
+}
+
+.remember{
+    display: flex;
+    margin-left:25%;
+    font-size: 20px;
+   
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(217, 206, 206);
+    opacity: 1; /* Firefox */
+  }
+
+a{
+    all:unset;
+    cursor:pointer;
+}
+
+.register{
+    text-align: center;
+    font-size: 20px;
+  
+}
