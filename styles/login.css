@@ -1,6 +1,8 @@
 body{
     background-color:#D6CEBA;
     margin:0;
+    font-family: 'Raleway', sans-serif;
+    
 }
 
 .content {
@@ -98,5 +100,10 @@ a{
 .register{
     text-align: center;
     font-size: 20px;
+ 
   
+}
+
+.check{
+    margin-right:15px;
 }
