@@ -72,8 +72,15 @@ a {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.842) 150%);
 }
 
+.top-image {
+    display: flex;
+    justify-content: center;
+}
+
 .top-image img {
-    margin-top: 10px;
+    user-select: none;
+    position: relative;
+    margin-top: 15px;
     width: 108px;
     height: 137px;
 }
@@ -87,9 +94,11 @@ a {
 }
 
 .middle-image-text h1 {
+    color: white;
+    text-transform: uppercase;
     font-family: timonium, sans-serif;
-    margin: 0 0 20px 0;
-    font-size: 100px;
+    margin: 0 0 10px 0;
+    font-size: 80px;
     font-weight: 500;
 }
 
@@ -100,4 +109,9 @@ a {
     font-family: 'Bahnschrift', sans-serif;
     margin: 0;
     font-size: 25px;
+}
+
+.clothing-row img {
+    width: 375px;
+    height: 322px;
 }
