@@ -2,11 +2,12 @@
 @import url("https://use.typekit.net/nmy8ygu.css");
 
 body {
+    font-family: 'Bahnschrift', sans-serif;
     margin: 0;
 }
 
 nav {
-    font-family: 'Bahnschrift', sans-serif;
+    
     background-color: white;
 }
 
@@ -46,20 +47,21 @@ a {
     text-decoration: none;
 }
 
-.image-container {
+.video-container {
+    display: inline-block;
     position: relative;
     width: 100%;
-    height: 847px;
+    height: 100vh;
     overflow: hidden;
 }
 
-.image-container video {
+.video-container video {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -114,4 +116,14 @@ a {
 .clothing-row img {
     width: 375px;
     height: 322px;
+}
+
+.new-releases {
+    margin: 35px 0;
+    color: rgb(158, 158, 158);
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: timonium, sans-serif;
+    font-size: 40px;
 }
