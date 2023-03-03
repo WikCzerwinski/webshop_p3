@@ -7,23 +7,22 @@ body {
 }
 
 nav {
-    
     background-color: white;
 }
 
 .navbar-logo {
     font-weight: 500;
-    font-size: 30px;
+    font-size: 38px;
     font-family: timonium, sans-serif;
     position: absolute;
 }
 
 .navbar-logo p {
-    margin: 12px 0 0 30px;
+    margin: 18px 0 0 30px;
 }
 
 .navbar-anchor {
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +36,7 @@ ul {
 }
 
 li {
-    font-size: 13px;
+    font-size: 15px;
     text-transform: uppercase;
     margin: 0 50px;
 }
@@ -45,6 +44,10 @@ li {
 a {
     color: black;
     text-decoration: none;
+}
+
+a:hover {
+    color: rgb(158, 158, 158);
 }
 
 .video-container {
@@ -83,8 +86,8 @@ a {
     user-select: none;
     position: relative;
     margin-top: 15px;
-    width: 108px;
-    height: 137px;
+    width: 140px;
+    height: 175px;
 }
 
 .middle-image-text {
@@ -110,7 +113,7 @@ a {
     text-transform: uppercase;
     font-family: timonium, sans-serif;
     margin: 0 0 10px 0;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 500;
 }
 
@@ -120,7 +123,7 @@ a {
     text-align: center;
     font-family: 'Bahnschrift', sans-serif;
     margin: 0;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .clothing-row img {
@@ -136,4 +139,24 @@ a {
     text-transform: uppercase;
     font-family: timonium, sans-serif;
     font-size: 40px;
+}
+    font-size: 50px;
+}
+
+.navbar-login,
+.navbar-cart {
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+
+.navbar-login i {
+    font-size: 23px;
+    margin-right: 160px
+}
+
+
+.navbar-cart i {
+    font-size: 23px;
+    margin-right: 65px
 }
