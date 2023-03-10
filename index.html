@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/indexStyle.css">
+    <script src="https://kit.fontawesome.com/78a4a1d08b.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -18,8 +19,14 @@
             <li><a href="">Home</a></li>
             <li><a href="">Shop</a></li>
             <li><a href="">Contact</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
+        <div class="navbar-login">
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="navbar-cart">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
     </nav>
     <div class="video-container">
         <video autoplay muted loop id="myVideo">
@@ -39,7 +46,8 @@
     </div>
     <h1 class="new-releases">New Releases</h1>
     <div class="clothing-row">
-        <marquee direction="right" scrollamount="10">
+        <marquee direction="right" scrollamount="10" infinite>
+            <!-- foto's uit database -->
             <img src="/img/Clothing/num1.png">
             <img src="/img/Clothing/num2.png">
             <img src="/img/Clothing/num3.png">
@@ -47,7 +55,6 @@
             <img src="/img/Clothing/num5.png">
             <img src="/img/Clothing/num6.png">
             <img src="/img/Clothing/num8.png">
-
         </marquee>
     </div>
 </body>
