@@ -8,7 +8,7 @@ body {
 
 nav {
     background-color: white;
-    
+
 }
 
 .navbar-logo {
@@ -101,6 +101,16 @@ a:hover {
     transform: translate(-50%, -50%);
 }
 
+.middle-image-text-black {
+    color: black;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40%;
+}
+
 .middle-image-text h1 {
     color: white;
     text-transform: uppercase;
@@ -132,6 +142,8 @@ a:hover {
     font-weight: 100;
     text-transform: uppercase;
     font-family: timonium, sans-serif;
+    font-size: 40px;
+}
     font-size: 50px;
 }
 
@@ -151,9 +163,4 @@ a:hover {
 .navbar-cart i {
     font-size: 23px;
     margin-right: 65px
-}
-
-.clothing-row {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
 }
