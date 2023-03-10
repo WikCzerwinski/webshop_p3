@@ -162,3 +162,7 @@ a:hover {
     font-size: 23px;
     margin-right: 65px
 }
+
+.clothing-row {
+    display: flex;
+}
