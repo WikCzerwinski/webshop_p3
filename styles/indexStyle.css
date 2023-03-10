@@ -8,6 +8,7 @@ body {
 
 nav {
     background-color: white;
+
 }
 
 .navbar-logo {
@@ -47,6 +48,8 @@ a {
 }
 
 a:hover {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
     color: rgb(158, 158, 158);
 }
 
@@ -128,6 +131,7 @@ a:hover {
 
 .clothing-row img {
     width: 375px;
+    margin-right: 10px;
     height: 322px;
 }
 
@@ -139,4 +143,22 @@ a:hover {
     text-transform: uppercase;
     font-family: timonium, sans-serif;
     font-size: 40px;
+}
+
+.navbar-login,
+.navbar-cart {
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+
+.navbar-login i {
+    font-size: 23px;
+    margin-right: 160px
+}
+
+
+.navbar-cart i {
+    font-size: 23px;
+    margin-right: 65px
 }
