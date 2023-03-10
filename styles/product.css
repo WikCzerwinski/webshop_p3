@@ -1,0 +1,105 @@
+@import url('https://fonts.cdnfonts.com/css/bahnschrift');
+@import url("https://use.typekit.net/nmy8ygu.css");
+
+
+body {
+    font-family: 'Bahnschrift', sans-serif;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin: 0 50px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.navbar-anchor {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-weight: 500;
+    font-size: 30px;
+    font-family: timonium, sans-serif;
+    position: absolute;
+}
+
+.navbar-logo p {
+    margin: 12px 0 0 30px;
+}
+
+.productcontainer {
+    
+    width: 32%;
+    height: 550px;
+    margin-left: 10%;
+
+    flex-direction: row;
+}
+
+.topcontainer{
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+
+}
+
+.product-title{
+   
+}
+
+.description{
+    
+}
+
+.infocontainer{
+    margin-left:5%;
+    width:35%;
+}
+
+.productimg{
+    width:100%
+}
+
+.price{
+    font-size:25px;
+}
+
+.ordernow{
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: black;
+    color: #ffffff;
+    font-family: 'Bahnschrift';
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 150ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.ordernow:hover
+ {
+    background: rgb(158, 158, 158);
+}
