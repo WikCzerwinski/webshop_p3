@@ -4,6 +4,7 @@
 body {
     font-family: 'Bahnschrift', sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
 
 nav {
@@ -64,8 +65,68 @@ a:hover {
     margin-right: 160px
 }
 
-
 .navbar-cart i {
     font-size: 23px;
     margin-right: 65px
+}
+
+.categorys {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.categorys ul {
+    margin: 30px 0;
+    display: inline-block;
+}
+
+.categorys li {
+    margin: 0 70px;
+    font-size: 13px;
+    display: inline;
+}
+
+.tile-row {
+    margin: 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    flex: 1;
+    margin: 100px 10px 10px 10px;
+}
+
+.tile {
+    /* background-color: #fafafa; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: auto;
+}
+
+.tile img {
+    text-align: center;
+    width: 400px;
+}
+
+.tile img:hover {
+    opacity: 60%;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+.product-title {
+    margin-bottom: 7px;
+}
+
+.pages-chooser {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px 0;
+}
+
+.pages-chooser a {
+    padding: 10px;
 }
