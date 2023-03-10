@@ -8,6 +8,7 @@ body {
 
 nav {
     background-color: white;
+    
 }
 
 .navbar-logo {
@@ -47,6 +48,8 @@ a {
 }
 
 a:hover {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
     color: rgb(158, 158, 158);
 }
 
@@ -118,6 +121,7 @@ a:hover {
 
 .clothing-row img {
     width: 375px;
+    margin-right: 10px;
     height: 322px;
 }
 
@@ -147,4 +151,9 @@ a:hover {
 .navbar-cart i {
     font-size: 23px;
     margin-right: 65px
+}
+
+.clothing-row {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
