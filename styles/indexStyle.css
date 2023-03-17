@@ -1,168 +1,171 @@
-@import url('https://fonts.cdnfonts.com/css/bahnschrift');
+@import url("https://fonts.cdnfonts.com/css/bahnschrift");
 @import url("https://use.typekit.net/nmy8ygu.css");
 
 body {
-    overflow-x: hidden;
-    font-family: 'Bahnschrift', sans-serif;
-    margin: 0;
+  overflow-x: hidden;
+  font-family: "Bahnschrift", sans-serif;
+  margin: 0;
 }
 
 nav {
-    background-color: white;
+  background-color: white;
 }
 
 .navbar-logo {
-    font-weight: 500;
-    font-size: 38px;
-    font-family: timonium, sans-serif;
-    position: absolute;
+  font-weight: 500;
+  font-size: 38px;
+  font-family: timonium, sans-serif;
+  position: absolute;
 }
 
 .navbar-logo p {
-    margin: 18px 0 0 30px;
+  margin: 18px 0 0 30px;
 }
 
 .navbar-anchor {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
-    display: flex;
-    list-style: none;
-    margin: 20px 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
 }
 
 li {
-    font-size: 15px;
-    text-transform: uppercase;
-    margin: 0 50px;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 50px;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 a:hover {
-    transition: all .2s ease;
-    -webkit-transition: all .2s ease;
-    color: rgb(158, 158, 158);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  color: rgb(158, 158, 158);
 }
 
 .video-container {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .video-container video {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .gradient-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.842) 150%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.842) 150%
+  );
 }
 
 .top-image {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .top-image img {
-    user-select: none;
-    position: relative;
-    margin-top: 15px;
-    width: 140px;
-    height: 175px;
+  user-select: none;
+  position: relative;
+  margin-top: 15px;
+  width: 140px;
+  height: 175px;
 }
 
 .middle-image-text {
-    color: white;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .middle-image-text-black {
-    color: black;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 40%;
+  color: black;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 40%;
 }
 
 .middle-image-text h1 {
-    color: white;
-    text-transform: uppercase;
-    font-family: timonium, sans-serif;
-    margin: 0 0 10px 0;
-    font-size: 100px;
-    font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  font-family: timonium, sans-serif;
+  margin: 0 0 10px 0;
+  font-size: 100px;
+  font-weight: 500;
 }
 
 .middle-image-text p {
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: 'Bahnschrift', sans-serif;
-    margin: 0;
-    font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Bahnschrift", sans-serif;
+  margin: 0;
+  font-size: 35px;
 }
 
 .clothing-row img {
-    width: 375px;
-    margin-right: 10px;
-    height: 322px;
+  width: 375px;
+  margin-right: 10px;
+  height: 322px;
 }
 
 .new-releases {
-    margin: 35px 0;
-    color: rgb(158, 158, 158);
-    text-align: center;
-    font-weight: 100;
-    text-transform: uppercase;
-    font-family: timonium, sans-serif;
-    font-size: 40px;
+  margin: 35px 0;
+  color: rgb(158, 158, 158);
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: timonium, sans-serif;
+  font-size: 40px;
 }
 
 .navbar-login,
 .navbar-cart {
-    position: absolute;
-    right: 0;
-    top: 40px;
+  position: absolute;
+  right: 0;
+  top: 40px;
 }
 
 .navbar-login i {
-    font-size: 23px;
-    margin-right: 160px
+  font-size: 23px;
+  margin-right: 160px;
 }
 
-
 .navbar-cart i {
-    font-size: 23px;
-    margin-right: 65px
+  font-size: 23px;
+  margin-right: 65px;
 }
 
 .clothing-row {
-    display: flex;
+  display: flex;
 }
