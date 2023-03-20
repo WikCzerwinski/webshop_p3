@@ -30,39 +30,41 @@
     </nav>
     <div class="categorys">
         <ul>
-            <a href="">
-                <li>All</li>
-            </a>
-            <a href="">
-                <li>Pants</li>
-            </a>
-            <a href="">
-                <li>T-shirts</li>
-            </a>
-            <a href="">
-                <li>Jackets</li>
-            </a>
-            <a href="">
-                <li>Sweaters</li>
-            </a>
-            <a href="">
-                <li>Vests</li>
-            </a>
+            <li><a class="category-filter" data-category="0">All</a></li>
+            <li><a class="category-filter" data-category="1">Pants</a></li>
+            <li><a class="category-filter" data-category="2">T-shirts</a></li>
+            <li><a class="category-filter" data-category="3">Jackets</a></li>
+            <li><a class="category-filter" data-category="4">Sweaters</a></li>
+            <li><a class="category-filter" data-category="5">Vests</a></li>
+            <li><a class="category-filter" data-category="6">Other</a></li>
         </ul>
     </div>
     <div class="clothing-catalog">
-        <div class="tile-row">
-            <div class="product">
-                <% for(var i=0; i<products.length; i++) { %>
-                    <p><%= products[i].Name %> - <%= products[i].Price %></p>
-                <% } %>
-                <div class="tile"><a href=""><img src="/img/Clothing/num1.png"></a></div>
-                <div class="product-info">
-                    <div class="product-title"><a href="">Louis Vuitton midnight vest</a></div>
-                    <div class="product-price">€ 850</div>
+        <% let i = 0; %>
+        <% let y = 1; %>
+        <%  %>
+        <h1></h1>
+        <% if (y == 1) { %>
+            <% while (i < products.length) { %>
+                
+                <div class="tile-row">
+                    <% for (var j=0; j < 3 && i < products.length; j++) { %>
+                        <div class="product">
+                            <div class="tile"><a href=""><img src="<%= products[i].Image %>"></a></div>
+                            <div class="product-info">
+                                <div class="product-title"><a>
+                                        <%= products[i].Name %>
+                                    </a></div>
+                                <div class="product-price">€<%= products[i].Price %></div>
+                            </div>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <% i++; %>
+                    <% } %>
                 </div>
-            </div>
-        </div>
+                <% } %>
+            <% } %>
     </div>
     <div class="pages-chooser">
         <ul>
@@ -73,7 +75,19 @@
             <li><a href="">5</a></li>
         </ul>
     </div>
-    <script src="/javascript/shop.js"></script>
+    <script>
+        $('ul li a').click(function (e) {
+            e.preventDefault();
+            var category = $(this).data('category');
+            $('.product-title').each(function () {
+                if ($(this).data('category') == category) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

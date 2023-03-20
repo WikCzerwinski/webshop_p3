@@ -92,6 +92,14 @@ a:hover {
     flex-wrap: wrap;
 }
 
+.product-title a {
+    cursor: pointer;
+}
+
+.category-filter {
+    cursor: pointer;
+}
+
 .product {
     flex: 1;
     margin: 100px 10px 10px 10px;
