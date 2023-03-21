@@ -1,29 +1,15 @@
-let categoryButtons = document.querySelectorAll('.category-filter');
-categoryButtons.forEach(link => {
-    link.addEventListener('click', (event) => {
-        let selectedCategory = event.target.dataset.category;
+let categoryFilters = document.querySelectorAll('.category-filter');
+let products = document.querySelectorAll('.product');
+
+categoryFilters.forEach(filterBtn => {
+    filterBtn.addEventListener('click', e => {
+        let clickedCat = e.target.dataset.category;
+        products.forEach(product => {
+            if (clickedCat === '0' || product.dataset.category === clickedCat) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
     });
 });
-
-// <% for (let i = 0; i < products.length; i+= 3) { %>
-//     <% for (let j = i; j < i + 3; j++) { %>
-//         <% let clickedCat=0; %>
-//             <% if (products[j].Category == clickedCat) { %>
-//                 <div class="product">
-//                     <div class="tile"><a><img src="<%= products[j].Image %>"></a></div>
-//                     <div class="product-info">
-//                         <div class="product-title"><a>
-//                                 <span>
-//                                     <%= products[j].Brand %>
-//                                 </span>
-//                                 <br>
-//                                 <%= products[j].Name %>
-//                             </a></div>
-//                         <div class="product-price">
-//                             €<%= products[j].Price.replace('.00', ',-' ); %>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <% } %>
-//                     <% } %>
-//                         <% } %>
