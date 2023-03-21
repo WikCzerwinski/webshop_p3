@@ -96,23 +96,35 @@ table {
 }
 
 table .fa-pencil {
-    color: rgb(82, 82, 201);
+    font-size: 20px;
+    color: #5252c9;
     padding: 10px 10px 10px 0;
 }
 
+form .fa-pencil:hover {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    color: #292964;
+}
+
 table .fa-trash {
-    color: rgb(240, 72, 72);
+    font-size: 20px;
+    color: #f04848;
     padding: 10px 10px 10px 5px;
+}
+
+form .fa-trash:hover {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    color: #822727;
+}
+
+table img {
+    width: 70px;
 }
 
 form button {
     all: unset;
-}
-
-form button:hover {
-    transition: all .2s ease;
-    -webkit-transition: all .2s ease;
-    color: rgb(158, 158, 158);
 }
 
 .actions {
@@ -129,8 +141,7 @@ form button:hover {
     text-align: center;
     display: none;
 }
-  
-  #alertSuccessMsg.sticky {
+
+#alertSuccessMsg.sticky {
     position: fixed;
-    
-  }
+}

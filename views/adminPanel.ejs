@@ -64,19 +64,31 @@
                     <tr>
                         <% for (const key in products[i]) { %>
                             <% if (key !=="created_at" && key !=="updated_at" ) { %>
-                                <td>
-                                    <%= products[i][key] %>
-                                </td>
-                                <% } %>
+                                <% if (key=="Image" ) { %>
+                                    <td>
+                                        <img src="<%= products[i][key] %>">
+                                    </td>
                                     <% } %>
-                                        <td class="actions">
-                                            <form>
-                                                <button><i class="fa-solid fa-pencil"></i></button>
-                                            </form>
-                                            <form action="/deleteProduct/<%= products[i].id %>" method="POST">
-                                                <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
-                                            </form>
-                                        </td>
+                                        <% if (key !=="Image" ) { %>
+                                            <td>
+                                                <%= products[i][key] %>
+                                            </td>
+                                            <% } %>
+                                                <% } %>
+                                                    <% } %>
+                                                        <td>
+                                                            <div class="actions">
+                                                                <form>
+                                                                    <button><i class="fa-solid fa-pencil"></i></button>
+                                                                </form>
+                                                                <form action="/deleteProduct/<%= products[i].id %>"
+                                                                    method="POST">
+                                                                    <button class="deleteBtn"><i
+                                                                            class="fa-solid fa-trash"></i></button>
+                                                                </form>
+                                                            </div>
+
+                                                        </td>
                     </tr>
                     <% } %>
             </tbody>
