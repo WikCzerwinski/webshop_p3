@@ -1,7 +1,7 @@
 categorien kleding nums
-1 = pants 9
-2 = t-shirts 9
-3 = jackets 9
-4 = sweaters 9
-5 = vests 9
-6 = overig 9
+1 = pants
+2 = t-shirts
+3 = jackets
+4 = sweaters
+5 = vests
+6 = overig

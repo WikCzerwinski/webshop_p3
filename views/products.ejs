@@ -39,32 +39,32 @@
             <li><a class="category-filter" data-category="6">Other</a></li>
         </ul>
     </div>
+    <script>
+        
+    </script>
     <div class="clothing-catalog">
-        <% let i = 0; %>
-        <% let y = 1; %>
-        <%  %>
-        <h1></h1>
-        <% if (y == 1) { %>
-            <% while (i < products.length) { %>
-                
-                <div class="tile-row">
-                    <% for (var j=0; j < 3 && i < products.length; j++) { %>
+        <% for (let i=0; i < products.length; i+=3) { %>
+            <% for (let j=i; j < i + 3; j++) { %>
+                <% let clickedCat=0; %>
+                    <% if (products[j].Category == selectedCategory ) { %>
                         <div class="product">
-                            <div class="tile"><a href=""><img src="<%= products[i].Image %>"></a></div>
+                            <div class="tile"><a><img src="<%= products[j].Image %>"></a></div>
                             <div class="product-info">
                                 <div class="product-title"><a>
-                                        <%= products[i].Name %>
+                                        <span>
+                                            <%= products[j].Brand %>
+                                        </span>
+                                        <br>
+                                        <%= products[j].Name %>
                                     </a></div>
-                                <div class="product-price">€<%= products[i].Price %></div>
+                                <div class="product-price">
+                                    €<%= products[j].Price.replace('.00', ',-' ); %>
+                                </div>
                             </div>
-                            <h2></h2>
-                            <p></p>
                         </div>
-                        <% i++; %>
-                    <% } %>
-                </div>
-                <% } %>
-            <% } %>
+                        <% } %>
+                            <% } %>
+                                <% } %>
     </div>
     <div class="pages-chooser">
         <ul>
@@ -76,18 +76,52 @@
         </ul>
     </div>
     <script>
-        $('ul li a').click(function (e) {
-            e.preventDefault();
-            var category = $(this).data('category');
-            $('.product-title').each(function () {
-                if ($(this).data('category') == category) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
+        let clothingCatalog = document.getElementById('clothing-catalog-id');
+        let productsObj = '<%= products %>';
+
+
+        for (let i = 0; i < productsObj.length; i += 3) {
+            for (let j = i; j < i + 3; j++) {
+                let clickedCat = 0;
+                if (productsObj[j].Category == clickedCat) {
+                    let productDiv = document.createElement('div');
+                    let tileDiv = document.createElement('div');
+                    let productInfoDiv = document.createElement('div');
+                    let productTitleDiv = document.createElement('div');
+                    let productPriceDiv = document.createElement('div');
+                    let anchor1 = document.createElement('a');
+                    let anchor2 = document.createElement('a');
+                    let img = document.createElement('img');
+                    let span = document.createElement('span');
+                    let br = document.createElement('br');
+
+                    clothingCatalog.appendChild(productDiv);
+                    productDiv.appendChild(tileDiv);
+                    tileDiv.appendChild(anchor1);
+                    anchor.appendChild(img);
+                    img.src = productsObj[j].Image;
+                    productDiv.appendChild(productInfoDiv);
+                    productInfoDiv.appendChild(productTitleDiv);
+                    productTitleDiv.appendChild(anchor2);
+                    anchor2.appendChild(span);
+                    span.innerHTML = productsObj[j].Brand;
+                    productTitleDiv.appendChild(br);
+                    productTitleDiv.innerHTML = productsObj[j].Name;
+                    productInfoDiv.appendChild(productPriceDiv);
+                    productPriceDiv.innerHTML = '€' + productsObj[j].Price.replace('.00', ',-');
+
+
+                    productDiv.className = 'product';
+                    tileDiv.className = 'tile';
+                    productInfoDiv.className = 'product-info';
+                    productTitleDiv.className = 'product-title';
+                    productPriceDiv.className = 'product-price';
+
                 }
-            });
-        });
+            }
+        }
     </script>
+    <script src="../javascript/shop.js"></script>
 </body>
 
 </html>

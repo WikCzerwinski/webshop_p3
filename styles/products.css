@@ -92,21 +92,11 @@ a:hover {
     flex-wrap: wrap;
 }
 
-.product-title a {
-    cursor: pointer;
-}
-
 .category-filter {
     cursor: pointer;
 }
 
-.product {
-    flex: 1;
-    margin: 100px 10px 10px 10px;
-}
-
 .tile {
-    /* background-color: #fafafa; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,4 +127,38 @@ a:hover {
 
 .pages-chooser a {
     padding: 15px;
+}
+
+.product-title a {
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+    cursor: pointer;
+}
+
+.product-title span {
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 18px;
+}
+
+.clothing-catalog {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    flex: 0 0 33.333333%;
+    margin: 100px 0 10px;
+}
+
+.product-info {
+    padding-left: 30px;
+}
+
+.product a {
+    cursor: pointer;
 }
