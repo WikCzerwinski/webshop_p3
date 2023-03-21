@@ -1,0 +1,136 @@
+body {
+    font-family: 'Bahnschrift', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: white;
+}
+
+.navbar-logo {
+    font-weight: 500;
+    font-size: 38px;
+    font-family: timonium, sans-serif;
+    position: absolute;
+}
+
+.navbar-logo p {
+    margin: 18px 0 0 30px;
+}
+
+.navbar-anchor {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+li {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0 50px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    color: rgb(158, 158, 158);
+}
+
+.navbar-login,
+.navbar-cart {
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+
+.navbar-login i {
+    font-size: 23px;
+    margin-right: 160px
+}
+
+.navbar-cart i {
+    font-size: 23px;
+    margin-right: 65px
+}
+
+.adminNav {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.adminNav ul {
+    margin: 30px 0;
+    display: inline-block;
+}
+
+.adminNav li {
+    margin: 0 70px;
+    font-size: 13px;
+    display: inline;
+}
+
+.adminNav a {
+    cursor: pointer;
+}
+
+thead {
+    font-size: 20px;
+}
+
+table {
+    margin-top: 40px;
+}
+
+table .fa-pencil {
+    color: rgb(82, 82, 201);
+    padding: 10px 10px 10px 0;
+}
+
+table .fa-trash {
+    color: rgb(240, 72, 72);
+    padding: 10px 10px 10px 5px;
+}
+
+form button {
+    all: unset;
+}
+
+form button:hover {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    color: rgb(158, 158, 158);
+}
+
+.actions {
+    display: flex;
+}
+
+#alertSuccessMsg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}
+  
+  #alertSuccessMsg.sticky {
+    position: fixed;
+    
+  }

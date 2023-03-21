@@ -39,10 +39,10 @@
             <li><a class="category-filter" data-category="6">Other</a></li>
         </ul>
     </div>
-    
+
     <div class="clothing-catalog">
-        <% for (let i=0; i < products.length; i+=3) { %>
-            <% for (let j=i; j < i + 3; j++) { %>
+        <% for (let i=0; i < products.length; i++) { %>
+            <% for (let j=i; j < i + 1; j++) { %>
                 <div class="product" data-category="<%= products[j].Category %>">
                     <div class="tile"><a><img src="<%= products[j].Image %>"></a></div>
                     <div class="product-info">
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                 </div>
-            <% } %>
-        <% } %>
+                <% } %>
+                    <% } %>
     </div>
     <div class="pages-chooser">
         <ul>
@@ -70,7 +70,7 @@
             <li><a href="">5</a></li>
         </ul>
     </div>
-    
+
     <script src="../javascript/shop.js"></script>
 </body>
 
