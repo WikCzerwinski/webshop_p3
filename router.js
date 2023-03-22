@@ -64,7 +64,6 @@ router.post('/deleteProduct/:id', function (req, res, next) {
         });
 });
 
-
 router.get('/product', function (req, res, next) {
     fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/products")
         .then(async response => {

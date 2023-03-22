@@ -133,15 +133,13 @@ a:hover {
   font-size: 35px;
 }
 
-.clothing-row img {
-  width: 375px;
-  margin-right: 10px;
-  height: 322px;
+.clothing-row .col-md-2 {
+  padding: 0 20px;
 }
 
 .new-releases {
-  margin: 35px 0;
-  color: rgb(158, 158, 158);
+  margin: 45px 0;
+  color: rgb(24, 24, 24);
   text-align: center;
   font-weight: 100;
   text-transform: uppercase;
@@ -166,6 +164,33 @@ a:hover {
   margin-right: 65px;
 }
 
+.clothing-slider {
+  margin-bottom: 60px;
+  display: flex;
+}
+
+
+.fa-chevron-left {
+  color: black;
+  font-size: 50px;
+}
+
+.fa-chevron-right {
+  color: black;
+  font-size: 50px;
+}
+
 .clothing-row {
   display: flex;
+  justify-content: center;
+}
+
+.img-fluid {
+  max-width: none;
+  width: 110%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 10%;
+  top: -50px;
 }
