@@ -17,9 +17,9 @@
             <p>Drip Too Hard</p>
         </div>
         <ul class="navbar-anchor">
-            <li><a href="/">Home</a></li>
+            <li><a href="">Home</a></li>
             <li><a href="/products">Shop</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/product">About</a></li>
         </ul>
         <div class="navbar-login">
             <a href="#"><i class="fa-solid fa-user"></i></a>
@@ -43,8 +43,9 @@
     <div class="clothing-catalog">
         <% for (let i=0; i < products.length; i++) { %>
             <% for (let j=i; j < i + 1; j++) { %>
+               <form class="itemform" method="GET" >
                 <div class="product" data-category="<%= products[j].Category %>">
-                    <div class="tile"><a><img src="<%= products[j].Image %>"></a></div>
+                    <div class="tile"><a href="/product/<%= products[j].id %>"><img src="<%= products[j].Image %>"></a></div>
                     <div class="product-info">
                         <div class="product-title"><a>
                                 <span>
@@ -58,6 +59,7 @@
                         </div>
                     </div>
                 </div>
+            </form>
                 <% } %>
                     <% } %>
     </div>

@@ -1,0 +1,29 @@
+#myCart{
+background: rgba(225, 221, 221, 0.598);
+width: 30%;
+height: 806px;
+border: 1px solid black;
+margin-left: 10px;
+}
+
+.cartTitle{
+    margin-left:30px;
+}
+
+hr {
+    border-top: 2px solid black;
+}
+
+.cartItem{
+    margin-left:10px;
+    margin-top:5px;
+    width: 25%;
+}
+
+.itemcontainer{
+    display: flex;
+}
+
+.iteminfo{
+    margin:0;
+}
