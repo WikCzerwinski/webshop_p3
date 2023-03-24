@@ -148,11 +148,7 @@ a:hover {
 .clothing-catalog {
     display: flex;
     flex-wrap: wrap;
-}
-
-.product {
-    flex: 0 0 33.333333%;
-    margin: 100px 0 10px;
+   
 }
 
 .product-info {
@@ -161,4 +157,10 @@ a:hover {
 
 .product a {
     cursor: pointer;
+}
+
+.itemform{
+    flex: 0 0 33.333333%;
+    margin: 100px 0 10px;
+
 }
