@@ -34,13 +34,13 @@ ul {
 
 .navbar-logo {
     font-weight: 500;
-    font-size: 30px;
+    font-size: 38px;
     font-family: timonium, sans-serif;
     position: absolute;
 }
 
 .navbar-logo p {
-    margin: 12px 0 0 30px;
+    margin: 18px 0 0 30px;
 }
 
 .productcontainer {
@@ -102,4 +102,23 @@ ul {
 .ordernow:hover
  {
     background: rgb(158, 158, 158);
+}
+
+.navbar-login,
+.navbar-cart {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    cursor: pointer;
+}
+
+.navbar-login i {
+    font-size: 23px;
+    margin-right: 160px
+}
+
+
+.navbar-cart i {
+    font-size: 23px;
+    margin-right: 65px
 }
