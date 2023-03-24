@@ -1,5 +1,6 @@
 let alertSuccessMsg = document.getElementById('alertSuccessMsg');
 let deleteButtons = document.querySelectorAll('.deleteBtn');
+let editButtons = document.querySelectorAll('.editBtn');
 
 deleteButtons.forEach(deleteBtn => {
     deleteBtn.addEventListener('click', e => {
@@ -7,7 +8,8 @@ deleteButtons.forEach(deleteBtn => {
         alertSuccessMsg.innerHTML = 'Product succesvol verwijderd!';
     });
 });
-const offsetTop = alertSuccessMsg.offsetTop;
+
+let offsetTop = alertSuccessMsg.offsetTop;
 
 window.addEventListener('scroll', () => {
     if (window.pageYOffset >= offsetTop) {
@@ -16,3 +18,6 @@ window.addEventListener('scroll', () => {
         alertSuccessMsg.classList.remove('sticky');
     }
 });
+
+
+

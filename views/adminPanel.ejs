@@ -62,39 +62,42 @@
             <tbody>
                 <% for (let i=0; i < products.length; i++) { %>
                     <tr>
-                        <% for (const key in products[i]) { %>
-                            <% if (key !=="created_at" && key !=="updated_at" ) { %>
-                                <% if (key=="Image" ) { %>
-                                    <td>
-                                        <img src="<%= products[i][key] %>">
-                                    </td>
+                            <% for (const key in products[i]) { %>
+                                <% if (key !=="created_at" && key !=="updated_at" ) { %>
+                                    <% if (key=="id" ) { %>
+                                        <td><form id="form<%= i %>" action="/editProduct/<%= products[i].id %>" method="POST">
+                                            <%= products[i][key] %>
+                                        </form>
+                                        </td>
                                     <% } %>
-                                        <% if (key !=="Image" ) { %>
-                                            <td>
-                                                <%= products[i][key] %>
-                                            </td>
-                                            <% } %>
-                                                <% } %>
-                                                    <% } %>
-                                                        <td>
-                                                            <div class="actions">
-                                                                <form>
-                                                                    <button><i class="fa-solid fa-pencil"></i></button>
-                                                                </form>
-                                                                <form action="/deleteProduct/<%= products[i].id %>"
-                                                                    method="POST">
-                                                                    <button class="deleteBtn"><i
-                                                                            class="fa-solid fa-trash"></i></button>
-                                                                </form>
-                                                            </div>
-
-                                                        </td>
+                                    <% if (key=="Image" ) { %>
+                                        <td>
+                                            <img src="<%= products[i][key] %>">
+                                        </td>
+                                    <% } %>
+                                    <% if (key !=="Image" && key !=="id" ) { %>
+                                        <td>
+                                            <input form="form<%= i %>" type="text" value="<%= products[i][key] %>">
+                                        </td>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                            <td>
+                                <div class="actions">
+                                    <button form="form<%= i %>" class="editBtn" type="submit"><i class="fa-solid fa-pencil"></i></button>
+                                    <form action="/deleteProduct/<%= products[i].id %>" method="POST">
+                                        <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                </div>
+                            </td>
                     </tr>
-                    <% } %>
+                <% } %>
             </tbody>
+            
+
         </table>
-    </div>
-    <script src="../javascript/adminPanel.js"></script>
+        </div>
+        <script src="../javascript/adminPanel.js"></script>
 </body>
 
 </html>

@@ -64,13 +64,13 @@ router.post('/deleteProduct/:id', function (req, res, next) {
         });
 });
 
-router.get('/product', function (req, res, next) {
-    fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/products")
+router.post('/editProduct/:id', function (req, res, next) {
+    const productId = req.params.id;
+    fetch('https://roc.tngapps.com/' + 'TPWQ283' + '/products/' + productId, { method: 'PUT' })
         .then(async response => {
-            data = await response.json();
-            res.render('product', { products: data });
+            res.redirect('/adminPanel');
         }).catch(error => {
-            console.log("Failed to load groups:", error);
+            console.log("Failed to delete product:", error);
             res.render('error', { message: error });
         });
 });
