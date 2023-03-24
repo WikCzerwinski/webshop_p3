@@ -64,13 +64,32 @@ router.post('/deleteProduct/:id', function (req, res, next) {
         });
 });
 
-router.post('/editProduct/:id', function (req, res, next) {
-    const productId = req.params.id;
-    fetch('https://roc.tngapps.com/' + 'TPWQ283' + '/products/' + productId, { method: 'PUT' })
-        .then(async response => {
-            res.redirect('/adminPanel');
-        }).catch(error => {
-            console.log("Failed to delete product:", error);
-            res.render('error', { message: error });
+// router.post('/editProduct/:id', function (req, res, next) {
+//     const productId = req.params.id;
+//     const updatedProductData = req.body;
+//     fetch('https://roc.tngapps.com/' + 'TPWQ283' + '/products/' + productId, { method: 'PUT', body: JSON.stringify(updatedProductData) })
+//         .then(async response => {
+//             res.redirect('/adminPanel');
+//         }).catch(error => {
+//             console.log("Failed to delete product:", error);
+//             res.render('error', { message: error });
+//         });
+// });
+
+router.post('/editProduct/:id', async function (req, res, next) {
+    let productId = req.params.id;
+    let updatedProductData = req.body;
+    try {
+        const response = await fetch('https://roc.tngapps.com/TPWQ283/products/' + productId, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProductData)
         });
+        const data = await response.json();
+        res.send(data); // send a response back to the client
+    } catch (error) {
+        res.render('error', { message: error });
+    }
 });
