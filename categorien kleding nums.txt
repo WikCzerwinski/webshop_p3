@@ -1,0 +1,7 @@
+categorien kleding nums
+1 = pants
+2 = t-shirts
+3 = jackets
+4 = sweaters
+5 = vests
+6 = overig
