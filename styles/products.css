@@ -145,12 +145,6 @@ a:hover {
     font-size: 18px;
 }
 
-.clothing-catalog {
-    display: flex;
-    flex-wrap: wrap;
-   
-}
-
 .product-info {
     padding-left: 30px;
 }
@@ -159,8 +153,16 @@ a:hover {
     cursor: pointer;
 }
 
-.itemform{
-    flex: 0 0 33.333333%;
-    margin: 100px 0 10px;
+.clothing-catalog {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
 
+.product {
+    margin: 100px 0 10px;
+}
+
+.product {
+    flex: 0 0 33.333333%
 }

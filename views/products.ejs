@@ -43,7 +43,6 @@
     <div class="clothing-catalog">
         <% for (let i=0; i < products.length; i++) { %>
             <% for (let j=i; j < i + 1; j++) { %>
-               <form class="itemform" method="GET" >
                 <div class="product" data-category="<%= products[j].Category %>">
                     <div class="tile"><a href="/product/<%= products[j].id %>"><img src="<%= products[j].Image %>"></a></div>
                     <div class="product-info">
@@ -59,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
                 <% } %>
                     <% } %>
     </div>
