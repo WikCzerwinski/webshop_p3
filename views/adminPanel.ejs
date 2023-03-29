@@ -24,7 +24,7 @@
         <ul class="navbar-anchor">
             <li><a href="/">Home</a></li>
             <li><a href="/products">Shop</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/views/about.html">About</a></li>
         </ul>
         <div class="navbar-login">
             <a href="#"><i class="fa-solid fa-user"></i></a>
@@ -43,9 +43,12 @@
     <div id="alertSuccessMsg" class="alert alert-success" role="alert">
     </div>
     <div class="overview">
+        <div class="btn-container">
+            <button type="button" id="addNewBtn" class="btn btn-success"><a href=""></a>Add new</button>
+        </div>
         <table class="table">
             <thead>
-                <tr>
+                <tr class="headtr">
                     <% for (let i=0; i==0; i++) { %>
                         <% let keys=Object.keys(products[i]); %>
                             <% for (const key of keys) { %>
@@ -60,44 +63,79 @@
                 </tr>
             </thead>
             <tbody>
+                <tr id="addNewForm">
+                    <% for (let i=0; i==0; i++) { %>
+                        <% let keys=Object.keys(products[i]); %>
+                            <% for (const key of keys) { %>
+                                <% if (key !=="created_at" && key !=="updated_at" && key !=="id" ) { %>
+                                    <td>
+                                        <input type="text" name="<%= key %>">
+                                    </td>
+                                    <% } %>
+                                        <% } %>
+                                            <% } %>
+                                                <button type="submit" id="addNewBtn" class="btn btn-success">Ok</button>
+                </tr>
                 <% for (let i=0; i < products.length; i++) { %>
-                    <tr>
+                    <% let keys=Object.keys(products[i]); %>
+                        <tr>
                             <% for (const key in products[i]) { %>
                                 <% if (key !=="created_at" && key !=="updated_at" ) { %>
                                     <% if (key=="id" ) { %>
-                                        <td><form id="form<%= i %>" action="/editProduct/<%= products[i].id %>" method="POST">
-                                            <%= products[i][key] %>
-                                        </form>
-                                        </td>
-                                    <% } %>
-                                    <% if (key=="Image" ) { %>
                                         <td>
-                                            <img src="<%= products[i][key] %>">
+                                            <form id="form<%= i %>" name="<%= key %>"
+                                                action="/editProduct/<%= products[i].id %>" method="POST">
+                                                <%= products[i][key] %>
+                                            </form>
                                         </td>
-                                    <% } %>
-                                    <% if (key !=="Image" && key !=="id" ) { %>
-                                        <td>
-                                            <input form="form<%= i %>" type="text" value="<%= products[i][key] %>">
-                                        </td>
-                                    <% } %>
-                                <% } %>
-                            <% } %>
-                            <td>
-                                <div class="actions">
-                                    <button form="form<%= i %>" class="editBtn" type="submit"><i class="fa-solid fa-pencil"></i></button>
-                                    <form action="/deleteProduct/<%= products[i].id %>" method="POST">
-                                        <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                    </tr>
-                <% } %>
+                                        <% } %>
+                                            <% if (key=="Category" ) { %>
+                                                <td>
+                                                    <input form="form<%= i %>" type="number" name="<%= key %>"
+                                                        value="<%= products[i][key] %>">
+                                                </td>
+                                                <% } %>
+                                                    <% if (key=="Price" ) { %>
+                                                        <td>
+                                                            <input form="form<%= i %>" type="number" name="<%= key %>"
+                                                                value="<%= products[i][key] %>">
+                                                        </td>
+                                                        <% } %>
+                                                        <% if (key == "Image") { %>
+                                                        <td>
+                                                            <input form="form<%= i %>" type="text"
+                                                                name="<%= key %>"
+                                                                value="<%= products[i][key] %>">
+                                                        </td>
+                                                        <% } %>
+                                                            <% if (key !=="id" && key !=="Category" && key !=="Price" && key !=="Image" ) { %>
+                                                                <td>
+                                                                    <input form="form<%= i %>" type="text"
+                                                                        name="<%= key %>"
+                                                                        value="<%= products[i][key] %>">
+                                                                </td>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <% } %>
+                                                                            <td>
+                                                                                <div class="actions">
+                                                                                    <button form="form<%= i %>"
+                                                                                        class="editBtn" type="submit"><i
+                                                                                            class="fa-solid fa-pencil"></i></button>
+                                                                                    <form
+                                                                                        action="/deleteProduct/<%= products[i].id %>"
+                                                                                        method="POST">
+                                                                                        <button class="deleteBtn"><i
+                                                                                                class="fa-solid fa-trash"></i></button>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </td>
+                        </tr>
+                        <% } %>
             </tbody>
-            
-
         </table>
-        </div>
-        <script src="../javascript/adminPanel.js"></script>
+    </div>
+    <script src="../javascript/adminPanel.js"></script>
 </body>
 
 </html>

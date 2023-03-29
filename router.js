@@ -4,12 +4,16 @@ let path = require('path');
 router.set('view engine', 'ejs');
 const ejs = require('ejs');
 const PORT = 3000;
+const bodyParser = require('body-parser');
+
 
 router.listen(PORT, () => console.log(`Express server currently running on port ${PORT}`));
 router.use('/styles', express.static(path.join(__dirname, 'styles')));
 router.use('/views', express.static(path.join(__dirname, 'views')));
 router.use('/img', express.static(path.join(__dirname, 'img')));
 router.use('/javascript', express.static(path.join(__dirname, 'javascript')));
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
 
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 router.get('/', function (req, res, next) {
@@ -18,7 +22,6 @@ router.get('/', function (req, res, next) {
             data = await response.json();
             res.render('index', { products: data });
         }).catch(error => {
-            console.log("Failed to load groups:", error);
             res.render('error', { message: error });
         });
 });
@@ -29,7 +32,6 @@ router.get('/products', function (req, res, next) {
             data = await response.json();
             res.render('products', { products: data });
         }).catch(error => {
-            console.log("Failed to load groups:", error);
             res.render('error', { message: error });
         });
 });
@@ -48,18 +50,44 @@ router.get('/adminPanel', function (req, res, next) {
             res.render('adminPanel', { users: usersData, products: productsData, basketitems: basketItemsData });
         })
         .catch(error => {
-            console.log("Failed to load groups:", error);
             res.render('error', { message: error });
         });
 });
 
 router.post('/deleteProduct/:id', function (req, res, next) {
-    const productId = req.params.id;
+    let productId = req.params.id;
     fetch('https://roc.tngapps.com/' + 'TPWQ283' + '/products/' + productId, { method: 'DELETE' })
         .then(async response => {
             res.redirect('/adminPanel');
         }).catch(error => {
-            console.log("Failed to delete product:", error);
+            res.render('error', { message: error });
+        });
+});
+
+router.post('/editProduct/:id', function (req, res, next) {
+    let productId = req.params.id;
+    let updatedProduct = {
+        Name: req.body.Name,
+        Description: req.body.Description,
+        Image: req.body.Image,
+        Category: req.body.Category,
+        Sizes: req.body.Sizes,
+        Colors: req.body.Colors,
+        Price: req.body.Price,
+        Brand: req.body.Brand,
+    };
+    fetch('https://roc.tngapps.com/' + 'TPWQ283' + '/products/' + productId, {
+        method: 'POST',
+        body: JSON.stringify(updatedProduct),
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(async response => {
+            console.log(response.status); // print the response status
+            console.log(response.statusText); // print the response status text
+            console.log(await response.json());
+            res.redirect('/adminPanel');
+        })
+        .catch(error => {
             res.render('error', { message: error });
         });
 });
@@ -71,26 +99,7 @@ router.get('/product/:id', function (req, res, next) {
             data = await response.json();
             res.render('product', { product: data });
         }).catch(error => {
-            console.log("Failed to load groups:", error);
             res.render('error', { message: error });
         });
-});
-
-router.post('/editProduct/:id', async function (req, res, next) {
-    let productId = req.params.id;
-    let updatedProductData = req.body;
-    try {
-        const response = await fetch('https://roc.tngapps.com/TPWQ283/products/' + productId, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedProductData)
-        });
-        const data = await response.json();
-        res.send(data); // send a response back to the client
-    } catch (error) {
-        res.render('error', { message: error });
-    }
 });
 

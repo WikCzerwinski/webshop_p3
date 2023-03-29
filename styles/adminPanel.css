@@ -16,7 +16,7 @@ nav {
 }
 
 .navbar-logo p {
-    margin: 18px 0 0 30px;
+    margin: 10px 0 0 30px;
 }
 
 .navbar-anchor {
@@ -119,10 +119,6 @@ form .fa-trash:hover {
     color: #822727;
 }
 
-table img {
-    width: 70px;
-}
-
 form button {
     all: unset;
 }
@@ -156,7 +152,7 @@ tr:nth-child(even) {
     background-color: rgb(247, 247, 247);
 }
 
-tr:hover {
+tr:hover:not(.headtr) {
     background-color: rgb(228, 227, 227);
 }
 
@@ -166,11 +162,25 @@ td {
 
 button {
     border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
 }
 
+.btn-container {
+    float: right;
+}
+
+.btn-success {
+    margin: 20px 0;
+    border: none;
+    background-color: rgb(0, 160, 0);
+    width: 120px;
+}
+
+#addNewForm {
+    display: none;
+}

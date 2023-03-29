@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/styles/product.css">
     <link rel="stylesheet" href="/styles/cart.css">
     <script src="/javascript/cart.js"></script>
-    <link rel="stylesheet" type="text/css" href="/styles/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/footer.css" />
     <title>Document</title>
 </head>
 
@@ -19,34 +19,44 @@
             <p>Drip Too Hard</p>
         </div>
         <ul class="navbar-anchor">
-            <li><a href="">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/products">Shop</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="/views/about.html">About</a></li>
+        </ul>
         </ul>
         <div class="navbar-login">
             <a href="#"><i class="fa-solid fa-user"></i></a>
         </div>
         <div class="navbar-cart">
-          
+
             <a onclick="myFunction()"><i class="fa-solid fa-cart-shopping"></i></a>
 
         </div>
     </nav>
-  
+
     <div class="topcontainer">
-      
+
         <div class="productcontainer">
-           
-           <img class="productimg" src="/<%= product.Image %>">
+
+            <img class="productimg" src="/<%= product.Image %>">
         </div>
         <div class="infocontainer">
-            <h1 class="product-title"><%= product.Brand %> <%= product.Name %></h1>
-            <p class="description"><%= product.Description %></p>
-            <p><%= product.Sizes %></p>
-            <p><%= product.Colors%></p>
-            <h1 class="price"> €<%= product.Price.replace('.00', ',-' ); %></h1>
-             <button class="ordernow">Add to cart</button>
+            <h1 class="product-title">
+                <%= product.Brand %>
+                    <%= product.Name %>
+            </h1>
+            <p class="description">
+                <%= product.Description %>
+            </p>
+            <p>
+                <%= product.Sizes %>
+            </p>
+            <p>
+                <%= product.Colors%>
+            </p>
+            <h1 class="price"> €<%= product.Price.replace('.00', ',-' ); %>
+            </h1>
+            <button class="ordernow">Add to cart</button>
         </div>
     </div>
 
@@ -54,10 +64,10 @@
 
 
 
-        <div id="myCart">
-           <h1 class="cartTitle">Your cart</h1>
-           <hr class="solid">
-           <div class="itemcontainer">
+    <div id="myCart">
+        <h1 class="cartTitle">Your cart</h1>
+        <hr class="solid">
+        <div class="itemcontainer">
             <img src="./img/Clothing/num1.png" class="cartItem" alt="">
             <div class="itemtext">
                 <p class="iteminfo">Louis Vuitton midnight vest</p>
@@ -66,26 +76,27 @@
                 <p class="iteminfo">Color :</p>
             </div>
 
-           </div>
         </div>
     </div>
+    </div>
 
-  
-   
+
+
     <footer>
         <div class="footer">
-          <div class="row">
-            <ul>
-              <li><a href="mailto:contact@DTH.com">Contact us</a></li>
-              <li><a href="#">Our Services</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-            </ul>
-          </div>
-          <div class="row">
-            Drip Too Hard Copyright © 2023 Drip Too Hard - All rights reserved
-          </div>
+            <div class="row">
+                <ul>
+                    <li><a href="mailto:contact@DTH.com">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                Drip Too Hard Copyright © 2023 Drip Too Hard - All rights reserved
+            </div>
         </div>
-      </footer>
+    </footer>
 </body>
+
 </html>

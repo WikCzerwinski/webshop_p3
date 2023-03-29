@@ -1,6 +1,9 @@
 let alertSuccessMsg = document.getElementById('alertSuccessMsg');
 let deleteButtons = document.querySelectorAll('.deleteBtn');
 let editButtons = document.querySelectorAll('.editBtn');
+let addBtn = document.getElementById('addNewBtn');
+let addNewForm = document.getElementById('addNewForm');
+
 
 deleteButtons.forEach(deleteBtn => {
     deleteBtn.addEventListener('click', e => {
@@ -19,5 +22,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
+addBtn.addEventListener('click', e => {
+    addNewForm.style.display = 'Block'
+});
 
