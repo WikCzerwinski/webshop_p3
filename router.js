@@ -82,9 +82,30 @@ router.post('/editProduct/:id', function (req, res, next) {
         headers: { 'Content-Type': 'application/json' }
     })
         .then(async response => {
-            console.log(response.status); // print the response status
-            console.log(response.statusText); // print the response status text
-            console.log(await response.json());
+            res.redirect('/adminPanel');
+        })
+        .catch(error => {
+            res.render('error', { message: error });
+        });
+});
+
+router.post('/createProduct', function (req, res, next) {
+    let newProduct = {
+        Name: req.body.Name,
+        Description: req.body.Description,
+        Image: req.body.Image,
+        Category: req.body.Category,
+        Sizes: req.body.Sizes,
+        Colors: req.body.Colors,
+        Price: req.body.Price,
+        Brand: req.body.Brand,
+    };
+    fetch('https://roc.tngapps.com/' + 'TPWQ283' + '/products', {
+        method: 'POST',
+        body: JSON.stringify(newProduct),
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(async response => {
             res.redirect('/adminPanel');
         })
         .catch(error => {

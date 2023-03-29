@@ -43,9 +43,6 @@
     <div id="alertSuccessMsg" class="alert alert-success" role="alert">
     </div>
     <div class="overview">
-        <div class="btn-container">
-            <button type="button" id="addNewBtn" class="btn btn-success"><a href=""></a>Add new</button>
-        </div>
         <table class="table">
             <thead>
                 <tr class="headtr">
@@ -63,21 +60,39 @@
                 </tr>
             </thead>
             <tbody>
-                <tr id="addNewForm">
+                <tr class="addTr">
                     <% for (let i=0; i==0; i++) { %>
                         <% let keys=Object.keys(products[i]); %>
                             <% for (const key of keys) { %>
-                                <% if (key !=="created_at" && key !=="updated_at" && key !=="id" ) { %>
-                                    <td>
-                                        <input type="text" name="<%= key %>">
-                                    </td>
+                                <% if (key=="id" ) { %>
+                                    <td></td>
                                     <% } %>
-                                        <% } %>
+                                        <% if (key=="Price" || key=="Category" ) { %>
+                                            <td>
+                                                <input form="formCreate" type="number" name="<%= key %>">
+                                            </td>
                                             <% } %>
-                                                <button type="submit" id="addNewBtn" class="btn btn-success">Ok</button>
+                                                <% if (key !=="created_at" && key !=="updated_at" && key !=="id" && key
+                                                    !=="Price" && key !=="Category" ) { %>
+                                                    <td>
+                                                        <input form="formCreate" type="text" name="<%= key %>">
+                                                    </td>
+                                                    <% } %>
+                                                        <% } %>
+                                                            <% } %>
+                                                                <td>
+                                                                    <form id="formCreate" action="/createProduct"
+                                                                        method="POST">
+                                                                        <button type="submit"
+                                                                            id="submitNewBtn"
+                                                                            class="btn btn-success">Add</button>
+                                                                     </form>
+                                                                </td>
+
                 </tr>
                 <% for (let i=0; i < products.length; i++) { %>
                     <% let keys=Object.keys(products[i]); %>
+
                         <tr>
                             <% for (const key in products[i]) { %>
                                 <% if (key !=="created_at" && key !=="updated_at" ) { %>
@@ -89,26 +104,20 @@
                                             </form>
                                         </td>
                                         <% } %>
-                                            <% if (key=="Category" ) { %>
+                                            <% if (key=="Category" || key=="Price" ) { %>
                                                 <td>
                                                     <input form="form<%= i %>" type="number" name="<%= key %>"
                                                         value="<%= products[i][key] %>">
                                                 </td>
                                                 <% } %>
-                                                    <% if (key=="Price" ) { %>
+                                                    <% if (key=="Image" ) { %>
                                                         <td>
-                                                            <input form="form<%= i %>" type="number" name="<%= key %>"
+                                                            <input form="form<%= i %>" type="text" name="<%= key %>"
                                                                 value="<%= products[i][key] %>">
                                                         </td>
                                                         <% } %>
-                                                        <% if (key == "Image") { %>
-                                                        <td>
-                                                            <input form="form<%= i %>" type="text"
-                                                                name="<%= key %>"
-                                                                value="<%= products[i][key] %>">
-                                                        </td>
-                                                        <% } %>
-                                                            <% if (key !=="id" && key !=="Category" && key !=="Price" && key !=="Image" ) { %>
+                                                            <% if (key !=="id" && key !=="Category" && key !=="Price" &&
+                                                                key !=="Image" ) { %>
                                                                 <td>
                                                                     <input form="form<%= i %>" type="text"
                                                                         name="<%= key %>"

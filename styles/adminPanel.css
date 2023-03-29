@@ -152,7 +152,7 @@ tr:nth-child(even) {
     background-color: rgb(247, 247, 247);
 }
 
-tr:hover:not(.headtr) {
+tr:hover:not(.headtr, .addTr) {
     background-color: rgb(228, 227, 227);
 }
 
@@ -175,12 +175,15 @@ button {
 }
 
 .btn-success {
-    margin: 20px 0;
     border: none;
     background-color: rgb(0, 160, 0);
-    width: 120px;
+    width: 70px;
 }
 
-#addNewForm {
-    display: none;
+.addTr {
+    background-color: rgba(138, 208, 106, 0.415);
+}
+
+.addTr input, .addTr button {
+    margin: 12px 0;
 }
