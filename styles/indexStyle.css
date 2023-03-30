@@ -11,6 +11,17 @@ nav {
   background-color: white;
 }
 
+.navbar-logo {
+  font-weight: 500;
+  font-size: 38px;
+  font-family: timonium, sans-serif;
+  position: absolute;
+}
+
+.navbar-logo p {
+  margin: 10px 0 0 30px;
+}
+
 .navbar-logoB {
   font-weight: 500;
   font-size: 38px;
