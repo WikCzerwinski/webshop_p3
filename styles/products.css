@@ -19,7 +19,7 @@ nav {
 }
 
 .navbar-logo p {
-    margin: 18px 0 0 30px;
+    margin: 10px 0 0 30px;
 }
 
 .navbar-anchor {
@@ -119,16 +119,6 @@ a:hover {
     margin-bottom: 7px;
 }
 
-.pages-chooser {
-    display: flex;
-    justify-content: center;
-    margin: 50px 0 10px 0;
-}
-
-.pages-chooser a {
-    padding: 15px;
-}
-
 .product-title a {
     font-size: 15px;
     color: rgb(141, 141, 141);
@@ -145,12 +135,6 @@ a:hover {
     font-size: 18px;
 }
 
-.clothing-catalog {
-    display: flex;
-    flex-wrap: wrap;
-   
-}
-
 .product-info {
     padding-left: 30px;
 }
@@ -159,7 +143,36 @@ a:hover {
     cursor: pointer;
 }
 
-.itemform{
-    flex: 0 0 33.333333%;
+.clothing-catalog {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.product {
     margin: 100px 0 10px;
 }
+
+.product {
+    flex: 0 0 33.333333%
+}
+
+.pages-chooser.simple-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px 0;
+}
+
+.pages-chooser.simple-pagination li {
+    padding: 0 50px;
+}
+
+.pages-chooser.simple-pagination li a {
+    color: #333;
+    padding: 10px;
+}
+
+.pages-chooser.simple-pagination li.active a {
+    color: #fff;
+}
+
