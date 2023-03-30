@@ -23,7 +23,7 @@
         </div>
         <ul class="navbar-anchor">
             <li><a href="/">Home</a></li>
-            <li><a href="/products">Shop</a></li>
+            <li><a href="/users">Shop</a></li>
             <li><a href="/views/about.html">About</a></li>
         </ul>
         <div class="navbar-login">
@@ -36,13 +36,33 @@
     <div class="adminNav">
         <ul>
             <li><a class="category-filter" href="/adminPanelUsers">User's baskets</a></li>
-            <li><a class="category-filter" href="/adminPanel">Products</a></li>
+            <li><a class="category-filter" href="/adminPanel">users</a></li>
         </ul>
     </div>
     <div id="alertSuccessMsg" class="alert alert-success" role="alert">
     </div>
     <div class="overview">
-        
+        <table class="table">
+            <thead>
+                <tr class="headtr">
+                    <% for (let i=0; i==0; i++) { %>
+                        <% let keys=Object.keys(users[i]); %>
+                            <% for (const key of keys) { %>
+                                <% if (key !=="created_at" && key !=="updated_at" ) { %>
+                                    <th scope="col">
+                                        <%= key %>
+                                    </th>
+                                    <% } %>
+                                        <% } %>
+                                            <% } %>
+                                                <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for () { %>
+                    <% } %>
+            </tbody>
+        </table>
     </div>
     <script src="../javascript/adminPanel.js"></script>
 </body>
