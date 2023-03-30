@@ -37,17 +37,25 @@ router.get('/products', function (req, res, next) {
 });
 
 router.get('/adminPanel', function (req, res, next) {
+    fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/products")
+    .then(async response => {
+        data = await response.json();
+        res.render('adminPanel', { products: data });
+    }).catch(error => {
+        res.render('error', { message: error });
+    });
+});
+
+router.get('/adminPanelUsers', function (req, res, next) {
     Promise.all([
         fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/users"),
-        fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/products"),
         fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/basketitems")
     ])
         .then(async responses => {
-            let [usersResponse, productsResponse, basketItemsResponse] = responses;
+            let [usersResponse, basketItemsResponse] = responses;
             let usersData = await usersResponse.json();
-            let productsData = await productsResponse.json();
             let basketItemsData = await basketItemsResponse.json();
-            res.render('adminPanel', { users: usersData, products: productsData, basketitems: basketItemsData });
+            res.render('adminPanelUsers', { users: usersData, basketitems: basketItemsData });
         })
         .catch(error => {
             res.render('error', { message: error });

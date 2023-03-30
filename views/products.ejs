@@ -8,6 +8,9 @@
     <script src="https://kit.fontawesome.com/78a4a1d08b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles/products.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../styles/simplePagination.css">
+    <script src="../javascript/jquery.simplePagination.js"></script>
     <title>Document</title>
 </head>
 
@@ -44,15 +47,21 @@
         <% for (let i=0; i < products.length; i++) { %>
             <% for (let j=i; j < i + 1; j++) { %>
                 <div class="product" data-category="<%= products[j].Category %>">
-                    <div class="tile"><a href="/product/<%= products[j].id %>"><img src="<%= products[j].Image %>"></a></div>
+                    <div class="tile">
+                        <a href="/product/<%= products[j].id %>">
+                            <img src="<%= products[j].Image %>">
+                        </a>
+                    </div>
                     <div class="product-info">
-                        <div class="product-title"><a>
+                        <div class="product-title">
+                            <a>
                                 <span>
                                     <%= products[j].Brand %>
                                 </span>
                                 <br>
                                 <%= products[j].Name %>
-                            </a></div>
+                            </a>
+                        </div>
                         <div class="product-price">
                             €<%= products[j].Price.replace('.00', ',-' ); %>
                         </div>
@@ -61,31 +70,20 @@
                 <% } %>
                     <% } %>
     </div>
-    <div class="pages-chooser">
-        <ul>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-        </ul>
-    </div>
-    <footer>
-        <div class="footer">
-          <div class="row">
+    <div class="pages-chooser"></div>
+    <footer class="footerB">
+        <div class="row">
             <ul>
-              <li><a href="mailto:contact@DTH.com">Contact us</a></li>
-              <li><a href="#">Our Services</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="mailto:contact@DTH.com">Contact us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
             </ul>
-          </div>
-  
-          <div class="row">
-            Drip Too Hard Copyright © 2023 Drip Too Hard - All rights reserved
-          </div>
         </div>
-      </footer>
+        <div class="row">
+            Drip Too Hard Copyright © 2023 Drip Too Hard - All rights reserved
+        </div>
+    </footer>
     <script src="../javascript/shop.js"></script>
 </body>
 

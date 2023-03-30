@@ -115,6 +115,9 @@ a:hover {
   width: 40%;
 }
 
+.middle-image-text-black img {
+  width: 100px;
+}
 .middle-image-text h1 {
   color: white;
   text-transform: uppercase;

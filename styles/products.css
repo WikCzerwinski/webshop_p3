@@ -119,16 +119,6 @@ a:hover {
     margin-bottom: 7px;
 }
 
-.pages-chooser {
-    display: flex;
-    justify-content: center;
-    margin: 50px 0 10px 0;
-}
-
-.pages-chooser a {
-    padding: 15px;
-}
-
 .product-title a {
     font-size: 15px;
     color: rgb(141, 141, 141);
@@ -166,3 +156,23 @@ a:hover {
 .product {
     flex: 0 0 33.333333%
 }
+
+.pages-chooser.simple-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px 0;
+}
+
+.pages-chooser.simple-pagination li {
+    padding: 0 50px;
+}
+
+.pages-chooser.simple-pagination li a {
+    color: #333;
+    padding: 10px;
+}
+
+.pages-chooser.simple-pagination li.active a {
+    color: #fff;
+}
+
