@@ -20,23 +20,23 @@
         <div class="loginbox">
             <p class="logintext">Register</p>
             
-            <form action="">
-                <input placeholder="username" class=login type="text">
-                <input placeholder="e-mail" class=login type="text">
-                <input placeholder="password" class=login type="password">
-                <input placeholder="confirm password"class=login type="password"> 
-            </form>
+            <form action="/register" method="POST">
+                <input placeholder="username" class=login type="text" name="Name">
+                <input  placeholder="e-mail" class=login type="text" name="EMail">
+                <input  placeholder="password" class=login type="text" name="Password">
 
-            <div class="remember">
+                  <div class="remember">
                 <input class="check" type="checkbox">
                 <p>I accept the terms and conditions.</p>
-            </div>
-            <a href="index.html">
-                <div class="loginbutton">
-                    register
                 </div>
-            </a>
-            <a href="login.html">
+                <button type="submit">             
+                    register
+                </button>
+            </form>
+
+            
+          
+            <a href="/login">
                 <p class="register">Already got an account? Log in here.</p>
             </a>
         </div>  
