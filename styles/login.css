@@ -51,6 +51,8 @@ img{
 
 .loginbutton{
     border: 2px solid white;
+    background-color: transparent;
+    color:white;
     border-radius: 10px;
     width:10%;
     font-size: 20px;
@@ -58,9 +60,9 @@ img{
     padding:10px;
     justify-content: center;
     margin:auto;
-    margin-left:25%;
+    margin-right:38%;
     margin-bottom: 5%;
-  
+    cursor: pointer;
 }
 .login {
     border: 0;
