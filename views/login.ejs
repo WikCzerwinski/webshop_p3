@@ -12,33 +12,31 @@
 
     <video autoplay muted loop id="myVideo">
         <source src="/img/video.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
+        Your browser does not support HTML5 video..
       </video>
     <div class="content">
     <img src="./img/logowebshop2.png" alt="">
     <div class="logincontainer">
         <div class="loginbox">
-            <p class="logintext">Register</p>
+            <p class="logintext">Login</p>
             
-            <form action="">
-                <input placeholder="username" class=login type="text">
-                <input placeholder="e-mail" class=login type="text">
-                <input placeholder="password" class=login type="password">
-                <input placeholder="confirm password"class=login type="password"> 
-            </form>
+            <form action="/login" method="POST">
+                <input placeholder="e-mail" class=login type="text" name="EMail">
+                <input placeholder="password"class=login type="password" name="Password"> 
+           
 
             <div class="remember">
                 <input class="check" type="checkbox">
-                <p>I accept the terms and conditions.</p>
+                <p>Remember me</p>
             </div>
-            <a href="index.html">
-                <div class="loginbutton">
-                    register
-                </div>
+            <button type="submit">             
+                login
+            </button>
+        </form>
+            <a href="/register">
+                <p class="register">Don't have an account yet? register here</p>
             </a>
-            <a href="login.html">
-                <p class="register">Already got an account? Log in here.</p>
-            </a>
+    
         </div>  
     </div>
 </div>
