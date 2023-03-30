@@ -6,9 +6,6 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const PORT = 3000;
 
-
-
-
 router.listen(PORT, () => console.log(`Express server currently running on port ${PORT}`));
 router.use('/styles', express.static(path.join(__dirname, 'styles')));
 router.use('/views', express.static(path.join(__dirname, 'views')));
@@ -51,13 +48,15 @@ router.get('/adminPanel', function (req, res, next) {
 router.get('/adminPanelUsers', function (req, res, next) {
     Promise.all([
         fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/users"),
-        fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/basketitems")
+        fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/basketitems"),
+        fetch('https://roc.tngapps.com/' + 'TPWQ283' + "/products")
     ])
         .then(async responses => {
-            let [usersResponse, basketItemsResponse] = responses;
+            let [usersResponse, basketItemsResponse, productsResponse] = responses;
             let usersData = await usersResponse.json();
             let basketItemsData = await basketItemsResponse.json();
-            res.render('adminPanelUsers', { users: usersData, basketitems: basketItemsData });
+            let productsData = await productsResponse.json();
+            res.render('adminPanelUsers', { users: usersData, basketitems: basketItemsData, products: productsData });
         })
         .catch(error => {
             res.render('error', { message: error });
@@ -134,10 +133,6 @@ router.get('/product/:id', function (req, res, next) {
         });
 });
 
-
-
-
-
 router.get('/login', (req, res) => {
     res.render("login.ejs")
 })
@@ -146,11 +141,8 @@ router.get('/register', (req, res) => {
     res.render("register.ejs")
 })
 
-
 router.post('/login', function (req, res, next) {
     const { EMail } = req.body;
-
-    // Make a GET request to retrieve the list of users from the external API
     fetch('https://roc.tngapps.com/TPWQ283/users', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
@@ -160,10 +152,8 @@ router.post('/login', function (req, res, next) {
             const user = users.find(u => u.EMail === EMail);
 
             if (user) {
-                // If user is found, redirect to index page or perform some other action
                 res.redirect('/');
             } else {
-                // If user is not found, render the login page with an error message
                 res.render('login', { errorMessage: 'Invalid email or password.' });
             }
         })

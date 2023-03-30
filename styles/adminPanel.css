@@ -187,3 +187,11 @@ button {
 .addTr input, .addTr button {
     margin: 12px 0;
 }
+
+.basketItems ul li{
+    margin: unset;
+}
+
+.basketItems ul {
+    display: unset;
+}

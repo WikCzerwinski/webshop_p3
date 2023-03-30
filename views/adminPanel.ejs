@@ -39,8 +39,6 @@
             <li><a class="category-filter" href="/adminPanel">Products</a></li>
         </ul>
     </div>
-    <div id="alertSuccessMsg" class="alert alert-success" role="alert">
-    </div>
     <div class="overview">
         <table class="table">
             <thead>
@@ -115,8 +113,7 @@
                                                                 value="<%= products[i][key] %>">
                                                         </td>
                                                         <% } %>
-                                                            <% if (key !=="id" && key !=="Category" && key !=="Price" &&
-                                                                key !=="Image" ) { %>
+                                                            <% if (key !=="id" && key !=="Category" && key !=="Price" && key !=="Image" ) { %>
                                                                 <td>
                                                                     <input form="form<%= i %>" type="text"
                                                                         name="<%= key %>"

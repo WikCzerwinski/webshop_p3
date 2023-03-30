@@ -55,12 +55,43 @@
                                     <% } %>
                                         <% } %>
                                             <% } %>
-                                                <th>Action</th>
+                                                <th>Basket items</th>
                 </tr>
             </thead>
             <tbody>
-                <% for () { %>
-                    <% } %>
+                <% for (let i=0; i < users.length; i++) { %>
+                    <% let keys=Object.keys(users[i]); %>
+                        <tr>
+                            <% for (const key in users[i]) { %>
+                                <% if (key !=="created_at" && key !=="updated_at" ) { %>
+                                    <% if (key=="id" ) { %>
+                                        <td>
+                                            <%= users[i][key] %>
+                                        </td>
+                                        <% } %>
+                                            <% if (key !=="id" ) { %>
+                                                <td>
+                                                    <%= users[i][key] %>
+                                                </td>
+                                                <% } %>
+                                                    <% } %>
+                                                        <% } %>
+                                                        <td class="basketItems">
+                                                            <ul>
+                                                              <% for (let j=0; j < basketitems.length; j++) { %>
+                                                                <% if (basketitems[j].UserId == users[i].id) { %>
+                                                                  <% for (let k=0; k < products.length; k++) { %>
+                                                                    <% if (basketitems[j].ProductId == products[k].id) { %>
+                                                                      <li><%= products[k].Name %>, <%= basketitems[j].Count %> Pieces, <%= basketitems[j].Color %>, <%= basketitems[j].Size %></li>
+                                                                    <% } %>
+                                                                  <% } %>
+                                                                <% } %>
+                                                              <% } %>
+                                                            </ul>
+                                                          </td>
+                                                          
+                        </tr>
+                        <% } %>
             </tbody>
         </table>
     </div>
